@@ -4,17 +4,12 @@
  */
 package juegowordle;
 
-/**
- *
- * @author comp09j
- */
 public class JuegoWordle {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        PalabraObjetivo palabra = new PalabraObjetivo();
+        
+        palabra.escogerPalabra();
     }
     
 }

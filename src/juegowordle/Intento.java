@@ -4,10 +4,6 @@
  */
 package juegowordle;
 
-/**
- *
- * @author comp09j
- */
 public class Intento {
     
 }
