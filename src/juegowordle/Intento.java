@@ -6,4 +6,6 @@ package juegowordle;
 
 public class Intento {
     
+    
+    
 }
