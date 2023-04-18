@@ -3,6 +3,9 @@ package juegowordle.consola;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 import juegowordle.interfaces.ITablero;
 
 
@@ -19,46 +22,48 @@ public class TableroConsola implements ITablero {
 
     @Override
     public void despliegaTablero() {
-        System.out.print("     ");
+        System.out.println("<> La letra no se encuentra en la palabra");
+        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
+        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
+        System.out.print("               ");
         for (int i = 1; i < 31; i++) {
             System.out.print(letras.get(i-1));
-            if(i % 5 == 0) System.out.print("\n\n     ");
+            if(i % 5 == 0) System.out.print("\n\n               ");
         }
     }
     
     @Override
-    public void agregarIntento(String intento, String palabra){
-        ArrayList<String> intentoSeparado = new ArrayList();
-        ArrayList<String> palabraSeparada = new ArrayList();
-        ArrayList<Integer> posiciones = new ArrayList();
-        Letra aux;
+    public void agregarIntento(String intento, String palabra,int ni){
         
-        String[] aIntentoSeparado = intento.split("");
-        String[] aPalabraSeparada = palabra.split("");
+        ArrayList<String> intentoSeparado = new ArrayList<>();
+        Collections.addAll(intentoSeparado, intento.split(""));
         
+        ArrayList<String> palabraSeparada = new ArrayList<>();
+        Collections.addAll(palabraSeparada, palabra.split(""));
+        
+        ArrayList<String> copiaPalabra  = new ArrayList<>();
+
+        copiaPalabra.addAll(palabraSeparada);
+       
         for (int i = 0; i < 5; i++) {
-            intentoSeparado.add(aIntentoSeparado[i]);
-            palabraSeparada.add(aPalabraSeparada[i]);
-        }
-        
-        for(int i = 0; i < 5; i++) {
-            aux = letras.get(i);
-            aux.setLetra(1,intentoSeparado.get(i));
-            if(palabraSeparada.contains(intentoSeparado.get(i)) == true){
-                posiciones.add(i);
-                aux = letras.get(i);
-                aux.setLetra(2,intentoSeparado.get(i));
+            letras.get(i + (ni * 5)).setLetra(1, intentoSeparado.get(i));
+            if(intentoSeparado.get(i).equals(palabraSeparada.get(i))){
+                letras.get(i + (ni * 5)).setEstado(3);
+                copiaPalabra.remove(intentoSeparado.get(i));
+            }else if(copiaPalabra.contains(intentoSeparado.get(i))){
+                letras.get(i + (ni * 5)).setEstado(2);
+                copiaPalabra.remove(intentoSeparado.get(i));
             }
         }
         
-        for(int i = 0; i < posiciones.size(); i++) {
-            if(palabraSeparada.get(posiciones.get(i)).equals(intentoSeparado.get(posiciones.get(i)))){
-                aux = letras.get(i);
-                aux.setLetra(3,intentoSeparado.get(i));
-            }
-        }
-        
-        
+         
     }
    
+    @Override
+    public void limpiarPantalla(){
+        for (int i = 0; i < 10; i++) {
+            System.out.println("\n\n\n\n");
+        }
+    }
+
 }

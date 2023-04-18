@@ -81,4 +81,7 @@ public class PalabraObjetivo {
         return existe;
     }
     
+    public boolean comprobarIntento(String intento){
+        return palabraObjetivo.equals(intento);
+    }
 }

@@ -13,6 +13,11 @@ public class Letra {
         letra = " ";
     }
     
+    public Letra(int estado, String letra){
+        this.estado = estado;
+        this.letra = letra;
+    }
+
     public String toString(){
         
         if (estado == 0)
@@ -31,5 +36,21 @@ public class Letra {
     public void setLetra(int estado, String letra){
         this.estado = estado;
         this.letra = letra;
+    }
+    
+    public void setContenido(String letra){
+        this.letra = letra;
+    }
+    
+    public void setEstado(int estado){
+        this.estado = estado;
+    }
+    
+    public String getLetra(){
+        return letra;
+    }
+    
+    public int getEstado(){
+        return estado;
     }
 }
