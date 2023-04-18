@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4Suite.java to edit this template
  */
+package juegowordle.consola;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,8 +16,8 @@ import org.junit.runners.Suite;
  * @author kadir
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({juegowordle.JuegowordleITSuite.class})
-public class RootSuite {
+@Suite.SuiteClasses({juegowordle.consola.LetraIT.class, juegowordle.consola.TecladoConsolaIT.class, juegowordle.consola.TableroConsolaIT.class})
+public class ConsolaITSuite {
 
     @BeforeClass
     public static void setUpClass() throws Exception {

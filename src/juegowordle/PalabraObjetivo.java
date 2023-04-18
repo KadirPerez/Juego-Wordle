@@ -84,4 +84,8 @@ public class PalabraObjetivo {
     public boolean comprobarIntento(String intento){
         return palabraObjetivo.equals(intento);
     }
+    
+    public void setPalabra(String palabraObjetivo){
+        this.palabraObjetivo = palabraObjetivo;
+    }
 }
