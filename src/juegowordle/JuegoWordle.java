@@ -29,6 +29,7 @@ public class JuegoWordle {
             teclado.despliegaTeclado();
             System.out.print("\n\n\nDigita el intento: ");
             intento = leer.nextLine();
+            intento = intento.toUpperCase();
             while(palabra.buscarPalabra(intento) != true){
                 if(palabra.buscarPalabra(intento) != true) System.out.println("La palabra no esta en la lista, intente otra vez");
                 System.out.print("\nDigita el intento: ");
@@ -37,11 +38,15 @@ public class JuegoWordle {
 
             tablero.agregarIntento(intento,palabra.getPalabra(),i);
             teclado.agregarIntento(intento,palabra.getPalabra());
-            
         }
+        
         tablero.limpiarPantalla();
         tablero.despliegaTablero();
         teclado.despliegaTeclado(); System.out.println("\n");
+        System.out.println(palabra.getPalabra());
+        if( palabra.comprobarIntento(intento) == true){
+            System.out.println("\n\nGANASTE\n\n");
+        }
     }    
     
 }

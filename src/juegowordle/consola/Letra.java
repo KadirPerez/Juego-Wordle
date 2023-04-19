@@ -18,6 +18,7 @@ public class Letra {
         this.letra = letra;
     }
 
+    @Override
     public String toString(){
         
         if (estado == 0)
