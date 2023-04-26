@@ -2,6 +2,7 @@
 package juegowordle.consola;
 
 import java.util.ArrayList;
+import juegowordle.Letra;
 import juegowordle.interfaces.ITeclado;
 
 
@@ -55,8 +56,7 @@ public class TecladoConsola implements ITeclado{
     
     @Override
     public void agregarIntento(String intento, String palabra){
-        int j =0;
-        Letra aux;
+        int j;
         String[] intentoSeparado = intento.split("");
         String[] palabraSeparada = palabra.split("");
         
