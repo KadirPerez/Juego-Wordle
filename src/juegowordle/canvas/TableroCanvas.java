@@ -1,33 +1,44 @@
 
-package juegowordle.consola;
+package juegowordle.canvas;
 
-
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Collections;
 import juegowordle.Letra;
 import juegowordle.interfaces.ITablero;
 
 
-public class TableroConsola implements ITablero {
+public class TableroCanvas implements ITablero {
     
     ArrayList<Letra> letras = new ArrayList();
     
-    
-    public TableroConsola(){
+    public TableroCanvas(){
         for (int i = 0; i < 30; i++) {
            letras.add(new Letra());
         }
+        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 30));
     }
 
     @Override
     public void despliegaTablero() {
-        System.out.println("<> La letra no se encuentra en la palabra");
-        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
-        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
-        System.out.print("               ");
+        int x = 0, y = 0;
         for (int i = 1; i < 31; i++) {
-            System.out.print(letras.get(i-1));
-            if(i % 5 == 0) System.out.print("\n\n               ");
+            switch(letras.get(i-1).getEstado()){
+                case 0 -> Canvas.canva.setForegroundColor(Color.decode("#dee1dd"));
+                case 1 -> Canvas.canva.setForegroundColor(Color.GRAY);
+                case 2 -> Canvas.canva.setForegroundColor(Color.ORANGE);
+                case 3 -> Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
+            }
+            Canvas.canva.fillRectangle(60 * x + 355, 60 * y + 100, 50, 50);
+            Canvas.canva.setForegroundColor(Color.WHITE);
+            Canvas.canva.drawString(letras.get(i-1).getLetra(), 60 * x + 370, 60 * y + 135);
+            if(i % 5 == 0){
+                y = y + 1;
+                x = 0;
+            }else{
+                x = x + 1;
+            }
         }
     }
     
@@ -60,18 +71,20 @@ public class TableroConsola implements ITablero {
    
     @Override
     public void limpiarPantalla(){
-        for (int i = 0; i < 10; i++) {
-            System.out.println("\n\n\n\n");
-        }
     }
     
     @Override
     public void mostrarResultado(String palabra, boolean gano){
+        Canvas.canva.erase();
+        despliegaTablero();
+        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 20));
         if( gano == true){
-            System.out.print("\nGanaste!!");
+            Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
+            Canvas.canva.drawString("GANASTE!!", 450, 480);
         }else{
-            System.out.print("\n\nFallaste :c\n\nPalabra correcta: " 
-                    + palabra);
+            Canvas.canva.setForegroundColor(Color.decode("#CA0E0E"));
+            Canvas.canva.drawString("Fallaste :c", 450, 480);
+            Canvas.canva.drawString("Palabra correcta: " + palabra, 320, 510);
         }
     }
 

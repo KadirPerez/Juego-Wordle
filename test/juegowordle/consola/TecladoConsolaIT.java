@@ -21,7 +21,7 @@ public class TecladoConsolaIT {
     }
     @Test
     public void testTeclado() {
-        System.out.println("agregarIntento");
+        System.out.println("teclado");
         String intento = "ABABA";
         String palabra = "GARZA";
         TecladoConsola instance = new TecladoConsola();

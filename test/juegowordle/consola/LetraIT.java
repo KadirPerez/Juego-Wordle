@@ -4,6 +4,7 @@
  */
 package juegowordle.consola;
 
+import juegowordle.Letra;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
