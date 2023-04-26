@@ -27,7 +27,8 @@ public class JuegoWordle {
             tablero.limpiarPantalla();
             tablero.despliegaTablero();
             teclado.despliegaTeclado();
-            System.out.print("\n\n\nDigita el intento: ");
+            System.out.print(palabra.getPalabra());
+            System.out.print("\nDigita el intento: ");
             intento = leer.nextLine();
             intento = intento.toUpperCase();
             while(palabra.buscarPalabra(intento) != true){
@@ -43,15 +44,12 @@ public class JuegoWordle {
             teclado.agregarIntento(intento,palabra.getPalabra());
             
         }
-        if(palabra.comprobarIntento(intento) == true){
-            System.out.print("\nGanaste!!");
-        }else{
-            System.out.print("\n\nFallaste :c\n\nPalabra correcta: " 
-                    + palabra.getPalabra());
-        }
+        
         tablero.limpiarPantalla();
         tablero.despliegaTablero();
         teclado.despliegaTeclado(); 
+        tablero.mostrarResultado(palabra.getPalabra(), palabra.comprobarIntento(intento));
+        
         System.out.println("\n\n\nPulse enter para finalizar");
         leer.nextLine();
         System.exit(0);

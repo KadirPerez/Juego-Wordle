@@ -52,6 +52,7 @@ public class TecladoConsola implements ITeclado{
         for (int i = 21; i < 28; i++) {
             System.out.print(letras.get(i-1));
         }
+        System.out.print("\n");
     }
     
     @Override

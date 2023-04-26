@@ -64,5 +64,15 @@ public class TableroConsola implements ITablero {
             System.out.println("\n\n\n\n");
         }
     }
+    
+    @Override
+    public void mostrarResultado(String palabra, boolean gano){
+        if( gano == true){
+            System.out.print("\nGanaste!!");
+        }else{
+            System.out.print("\n\nFallaste :c\n\nPalabra correcta: " 
+                    + palabra);
+        }
+    }
 
 }
