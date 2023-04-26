@@ -36,6 +36,7 @@ public class JuegoWordle {
                             + "intente otra vez");
                 System.out.print("\nDigita el intento: ");
                 intento = leer.nextLine();
+                intento = intento.toUpperCase();
             }
 
             tablero.agregarIntento(intento,palabra.getPalabra(),i);
