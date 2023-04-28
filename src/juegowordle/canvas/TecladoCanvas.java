@@ -49,14 +49,14 @@ import juegowordle.interfaces.ITeclado;
                 case 0:
                     Canvas.canva.setForegroundColor(Color.decode("#dee1dd"));
                     if(i < 21){
-                        Canvas.canva.fillRectangle(60 * x + 205, 60 * y + 500 , 50, 50);
+                        Canvas.canva.fillRectangle(60 * x + 55, 60 * y + 475 , 50, 50);
                         Canvas.canva.setForegroundColor(Color.DARK_GRAY);
-                        Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+220, 60*y+535 );
+                        Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+70, 60*y+510 );
                     }
                     else{
-                        Canvas.canva.fillRectangle(60 * x + 295, 60 * y + 500 , 50, 50);
+                        Canvas.canva.fillRectangle(60 * x + 145, 60 * y + 475 , 50, 50);
                         Canvas.canva.setForegroundColor(Color.DARK_GRAY);
-                        Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+310, 60*y+535 );
+                        Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+160, 60*y+510);
                     }
                        
                     break;
@@ -72,14 +72,14 @@ import juegowordle.interfaces.ITeclado;
                 }
                 
                 if(i < 21 && letras.get(i-1).getEstado() != 0){
-                    Canvas.canva.fillRectangle(60 * x + 205, 60 * y + 500 , 50, 50);
+                    Canvas.canva.fillRectangle(60 * x + 55, 60 * y + 475 , 50, 50);
                     Canvas.canva.setForegroundColor(Color.WHITE);
-                    Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+220, 60*y+535 );
+                    Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+70, 60*y+510 );
                 }
                 else if (letras.get(i-1).getEstado() != 0){
-                    Canvas.canva.fillRectangle(60 * x + 295, 60 * y + 500 , 50, 50);
+                    Canvas.canva.fillRectangle(60 * x + 145, 60 * y + 475 , 50, 50);
                     Canvas.canva.setForegroundColor(Color.WHITE);
-                    Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+310, 60*y+535 );
+                    Canvas.canva.drawString(letras.get(i-1).getLetra(), 60*x+160, 60*y+510 );
                 }
                 
                 if(i % 10 == 0){

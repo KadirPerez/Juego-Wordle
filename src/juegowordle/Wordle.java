@@ -1,6 +1,8 @@
 
 package juegowordle;
 
+import juegowordle.canvas.TableroCanvas;
+import juegowordle.canvas.TecladoCanvas;
 import juegowordle.consola.TableroConsola;
 import juegowordle.consola.TecladoConsola;
 import juegowordle.interfaces.ITablero;
@@ -13,8 +15,8 @@ public class Wordle {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ITeclado teclado = new TecladoConsola();
-        ITablero tablero = new TableroConsola();
+        ITeclado teclado = new TecladoCanvas();
+        ITablero tablero = new TableroCanvas();
         JuegoWordle juego = new JuegoWordle(tablero, teclado);
         
         juego.jugar();

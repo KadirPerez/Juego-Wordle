@@ -17,7 +17,7 @@ import java.awt.geom.*;
 public class Canvas
 {
     
-    public static Canvas canva = new Canvas("Juego",1000,750);
+    public static Canvas canva = new Canvas("Juego",700,700);
     private JFrame frame;
     private CanvasPane canvas;
     private Graphics2D graphic;
