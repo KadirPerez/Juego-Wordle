@@ -21,13 +21,14 @@ public class JuegoWordle {
         Scanner leer = new Scanner(System.in);
         palabra.escogerPalabra();
         String intento = null;
-        
+        tablero.mostrarInstrucciones();
+        System.out.println("\nPulse enter para iniciar");
+        leer.nextLine();
         for (int i = 0; i < 6 && palabra.comprobarIntento(intento) != true; i++)
         {
             tablero.limpiarPantalla();
             tablero.despliegaTablero();
             teclado.despliegaTeclado();
-            System.out.print(palabra.getPalabra());
             System.out.print("\nDigita el intento: ");
             intento = leer.nextLine();
             intento = intento.toUpperCase();

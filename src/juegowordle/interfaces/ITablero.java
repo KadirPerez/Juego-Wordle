@@ -10,6 +10,8 @@ public interface ITablero {
     
     public void mostrarResultado(String palabra,boolean gano);
     
+    public void mostrarInstrucciones();
+    
     public void limpiarPantalla();
     
 }

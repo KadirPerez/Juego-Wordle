@@ -21,9 +21,6 @@ public class TableroConsola implements ITablero {
 
     @Override
     public void despliegaTablero() {
-        System.out.println("<> La letra no se encuentra en la palabra");
-        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
-        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
         System.out.print("               ");
         for (int i = 1; i < 31; i++) {
             System.out.print(letras.get(i-1));
@@ -73,6 +70,13 @@ public class TableroConsola implements ITablero {
             System.out.print("\n\nFallaste :c\n\nPalabra correcta: " 
                     + palabra);
         }
+    }
+    
+    @Override
+    public void mostrarInstrucciones(){
+        System.out.println("<> La letra no se encuentra en la palabra");
+        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
+        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
     }
 
 }

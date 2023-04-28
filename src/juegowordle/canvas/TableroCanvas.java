@@ -87,5 +87,9 @@ public class TableroCanvas implements ITablero {
             Canvas.canva.drawString("Palabra correcta: " + palabra, 320, 510);
         }
     }
+    
+    public void mostrarInstrucciones(){
+    
+    }
 
 }
