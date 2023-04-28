@@ -89,7 +89,9 @@ public class TableroCanvas implements ITablero {
     }
     
     public void mostrarInstrucciones(){
-    
+        
+        
+        Canvas.canva.erase();
     }
 
 }
