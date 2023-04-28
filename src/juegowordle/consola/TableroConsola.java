@@ -3,9 +3,8 @@ package juegowordle.consola;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
+import juegowordle.Letra;
 import juegowordle.interfaces.ITablero;
 
 
@@ -22,9 +21,6 @@ public class TableroConsola implements ITablero {
 
     @Override
     public void despliegaTablero() {
-        System.out.println("<> La letra no se encuentra en la palabra");
-        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
-        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
         System.out.print("               ");
         for (int i = 1; i < 31; i++) {
             System.out.print(letras.get(i-1));
@@ -64,6 +60,23 @@ public class TableroConsola implements ITablero {
         for (int i = 0; i < 10; i++) {
             System.out.println("\n\n\n\n");
         }
+    }
+    
+    @Override
+    public void mostrarResultado(String palabra, boolean gano){
+        if( gano == true){
+            System.out.print("\nGanaste!!");
+        }else{
+            System.out.print("\n\nFallaste :c\n\nPalabra correcta: " 
+                    + palabra);
+        }
+    }
+    
+    @Override
+    public void mostrarInstrucciones(){
+        System.out.println("<> La letra no se encuentra en la palabra");
+        System.out.println("{} La letra se encuentra en la palabra pero no esta en posicion");
+        System.out.println("() La letra se encuentra en la palabra y en su posicion\n\n");
     }
 
 }
