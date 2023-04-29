@@ -96,70 +96,52 @@ public class TableroCanvas implements ITablero {
         Canvas.canva.setForegroundColor(Color.decode("#dde6ec"));
         Canvas.canva.fillRectangle(80, 20, 540, 50);
         Canvas.canva.fillRectangle(115, 320, 460, 190);
-        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 25));
+        
+        Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
+        Canvas.canva.fillRectangle(205, 235, 50, 50);
+        Canvas.canva.fillRectangle(129, 455, 20, 20);
+        Canvas.canva.fillRectangle(445, 235, 50, 50);
+        Canvas.canva.fillRectangle(159, 455, 20, 20);
+        
+        Canvas.canva.setForegroundColor(Color.GRAY);
+        Canvas.canva.fillRectangle(265, 235, 50, 50);
+        Canvas.canva.fillRectangle(129, 345, 20, 20);
+        Canvas.canva.fillRectangle(385, 235, 50, 50);
+        Canvas.canva.fillRectangle(159, 345, 20, 20);
+        
+        Canvas.canva.setForegroundColor(Color.ORANGE);
+        Canvas.canva.fillRectangle(325, 235, 50, 50);
+        Canvas.canva.fillRectangle(139, 400, 20, 20);
+        
+        
+        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 30));
         Canvas.canva.setForegroundColor(Color.BLACK);
         Canvas.canva.drawString("Cómo jugar", 260, 55);
+        Canvas.canva.setForegroundColor(Color.WHITE);
+        Canvas.canva.drawString("M", 215, 270);
+        Canvas.canva.drawString("E", 278, 270);
+        Canvas.canva.drawString("D", 338, 270);
+        Canvas.canva.drawString("I", 405, 270);
+        Canvas.canva.drawString("O", 458, 270);  
+        
         Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 14));
+        Canvas.canva.drawString("M", 133, 469);
+        Canvas.canva.drawString("E", 134, 359);
+        Canvas.canva.drawString("D", 144, 415);
+        Canvas.canva.drawString("I", 167, 359);
+        Canvas.canva.drawString("O", 163, 470);
+        Canvas.canva.setForegroundColor(Color.BLACK);
+        Canvas.canva.drawString("no está en la palabra objetivo en absoluto.", 190, 360);
+        Canvas.canva.drawString("está en la palabra pero en el lugar equivocado.", 190, 415);
+        Canvas.canva.drawString("está en la palabra y en el lugar correcto.", 190, 470);
         Canvas.canva.drawString("Tienes que adivinar la palabra oculta en 6 "
                 + "intentos y el color de las letras cambia", 25, 125);
         Canvas.canva.drawString("para mostrar lo cerca que estás.", 215, 155);
         Canvas.canva.drawString(" Para comenzar el juego, simplemente ingrese "
                 + "cualquier palabra, por ejemplo: ", 35, 185);
         
-   
-        Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
-        Canvas.canva.fillRectangle(205, 235, 50, 50);
         
-        Canvas.canva.setForegroundColor(Color.GRAY);
-        Canvas.canva.fillRectangle(265, 235, 50, 50);
-        
-        Canvas.canva.setForegroundColor(Color.ORANGE);
-        Canvas.canva.fillRectangle(325, 235, 50, 50);
-        
-        Canvas.canva.setForegroundColor(Color.GRAY);
-        Canvas.canva.fillRectangle(385, 235, 50, 50);
-        
-        Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
-        Canvas.canva.fillRectangle(445, 235, 50, 50);
-        
-        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 30));
-        Canvas.canva.setForegroundColor(Color.WHITE);
-        Canvas.canva.drawString("M", 215, 270);
-        Canvas.canva.drawString("E", 278, 270);
-        Canvas.canva.drawString("D", 338, 270);
-        Canvas.canva.drawString("I", 405, 270);
-        Canvas.canva.drawString("O", 458, 270);
-        
-        
-        
-        Canvas.canva.setForegroundColor(Color.BLACK);
-        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 14));
-        Canvas.canva.drawString("no está en la palabra objetivo en absoluto.", 190, 360);
-        Canvas.canva.drawString("está en la palabra pero en el lugar equivocado.", 190, 415);
-        Canvas.canva.drawString("está en la palabra y en el lugar correcto.", 190, 470);
-        
-        Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
-        Canvas.canva.fillRectangle(129, 455, 20, 20);
-        
-        Canvas.canva.setForegroundColor(Color.GRAY);
-        Canvas.canva.fillRectangle(129, 345, 20, 20);
-        
-        Canvas.canva.setForegroundColor(Color.ORANGE);
-        Canvas.canva.fillRectangle(129, 400, 20, 20);
-        
-        Canvas.canva.setForegroundColor(Color.GRAY);
-        Canvas.canva.fillRectangle(159, 345, 20, 20);
-        
-        Canvas.canva.setForegroundColor(Color.decode("#5ba946"));
-        Canvas.canva.fillRectangle(159, 455, 20, 20);
-    
-        Canvas.canva.setForegroundColor(Color.WHITE);
-        Canvas.canva.setFont(new Font("a", Font.CENTER_BASELINE, 14));
-        Canvas.canva.drawString("M", 133, 467);
-        Canvas.canva.drawString("E", 133, 357);
-        Canvas.canva.drawString("D", 133, 415);
-        Canvas.canva.drawString("I", 165, 357);
-        Canvas.canva.drawString("O", 163, 467);
+         
     }
 
 }
