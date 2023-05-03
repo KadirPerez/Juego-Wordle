@@ -24,7 +24,6 @@ public class JuegoWordle {
         tablero.mostrarInstrucciones();
         System.out.println("\nPulse enter para iniciar");
         leer.nextLine();
-        System.out.println(palabra.getPalabra());
         for (int i = 0; i < 6 && palabra.comprobarIntento(intento) != true; i++)
         {
             tablero.limpiarPantalla();
